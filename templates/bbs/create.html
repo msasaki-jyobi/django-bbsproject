@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{object|yesno:'投稿編集, 新規投稿'}}{% endblock %}
+
+{% block content %}
+
+<h1>投稿の{{object|yesno:'編集, 新規作成'}}</h1>
+
+<form action="" method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">{{object|yesno:'更新, 作成'}}</button>
+</form>
+<div><a href="{% url 'bbs:index' %}">一覧ページへ戻る</a></div>
+
+{% endblock %}

@@ -6,4 +6,6 @@
   <p>{{article.id}}:{{article.author}}:{{article.created_at}}</p>
   <p><a href="{% url 'bbs:detail' article.id %}">{{article.content}}</a></p>
 </div>
-{% endfor %} {% endblock %}
+{% endfor %}
+<a href="{% url 'bbs:create' %}">新規投稿</a>
+{% endblock %}
