@@ -4,7 +4,14 @@
 {% for article in object_list %}
 <div class="container">
   <p>{{article.id}}:{{article.author}}:{{article.created_at}}</p>
+  <p><a href="{% url 'bbs:like' article.id %}">いいね</a></p>
+  <form action="{% url 'bbs:like' article.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit">いいね:</button>
+  </form>
+
   <p><a href="{% url 'bbs:detail' article.id %}">{{article.content}}</a></p>
+
 </div>
 {% endfor %}
 <a href="{% url 'bbs:create' %}">新規投稿</a>

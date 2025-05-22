@@ -4,7 +4,7 @@ from django.urls import reverse
 
 # Create your models here.
 class Article(models.Model):
-    content = models.TextField()
+    content = models.TextField(null=True)
     author = models.ForeignKey(User, on_delete=models.PROTECT)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

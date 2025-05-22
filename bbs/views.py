@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import Article
 from django.urls import reverse_lazy
@@ -25,3 +25,8 @@ class DeleteView(generic.DeleteView):
     model = Article
     template_name = 'bbs/delete.html'
     success_url = reverse_lazy('bbs:index')
+
+def like(request, article_id):
+    print(f"Article ID is: {article_id}")
+    return redirect('bbs:index')  # リダイレクト
+    
