@@ -12,5 +12,7 @@
   </div>
 </div>
 {% endfor %}
+{% if user.is_authenticated %}
 <a href="{% url 'bbs:create' %}">{% bootstrap_button button_type="submit" content="新規投稿" size="md" %}</a>
+{% endif %}
 {% endblock %}

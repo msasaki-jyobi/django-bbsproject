@@ -11,3 +11,4 @@ urlpatterns = [
     path('<int:pk>/delete/', views.DeleteView.as_view(), name='delete'),
     path('search/', views.search, name='search'),    # 検索
 ]
+
