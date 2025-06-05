@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: my-django-app
-    env: python
-    buildCommand: "./build.sh"
-    startCommand: "python manage.py migrate && gunicorn bbsproject.wsgi:application"
